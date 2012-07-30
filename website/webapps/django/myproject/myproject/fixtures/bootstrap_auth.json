@@ -1,0 +1,50 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.group", 
+        "fields": {
+            "name": "translators", 
+            "permissions": []
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2012-07-23T12:57:40.335Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$Hg6S4uGN73Xu$Fsk3wryxIMOEki16VBNwRsTGyEA+UHtAQ7ijLnxia3g=", 
+            "email": "info@example.com", 
+            "date_joined": "2012-06-16T10:38:31.770Z"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "translator", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2012-06-16T10:38:56Z", 
+            "groups": [
+                [
+                    "translators"
+                ]
+            ], 
+            "user_permissions": [], 
+            "password": "md5$Uun4KP680dLv$b134c698d85bb294e5df00f33b6c8770", 
+            "email": "", 
+            "date_joined": "2012-06-16T10:38:56Z"
+        }
+    }
+]

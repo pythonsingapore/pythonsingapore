@@ -1,0 +1,6 @@
+"""Local Fabric settings."""
+WWW_OPEN = "xdg-open"  # other values: gnome-open, x-www-open, open
+
+ENV_USER = 'pysg'
+ENV_HOSTS = ['{0}.webfactional.com'.format(ENV_USER), ]
+PROJECT_NAME = 'pysg'

@@ -1,0 +1,126 @@
+[
+    {
+        "pk": 1, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "learning"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "offspring"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "people"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "tutorial"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 1, 
+            "object_id": 3, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 2, 
+            "object_id": 3, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 3, 
+            "object_id": 2, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 1, 
+            "object_id": 5, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 4, 
+            "object_id": 5, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 2, 
+            "object_id": 4, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 1, 
+            "object_id": 6, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "tagging.taggeditem", 
+        "fields": {
+            "tag": 3, 
+            "object_id": 6, 
+            "content_type": [
+                "cmsplugin_blog", 
+                "entry"
+            ]
+        }
+    }
+]

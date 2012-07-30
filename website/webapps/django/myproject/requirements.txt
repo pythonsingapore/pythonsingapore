@@ -1,0 +1,68 @@
+# ========================
+# Django related packages
+# ========================
+django==1.4
+django-extensions==0.9
+django-haystack==1.2.7
+django-missing==0.1.5
+django-rosetta==0.6.8
+-e hg+http://bitbucket.org/ubernostrum/django-registration@1086c6ad3a4743a0bc7b6536e0623b17c9c1af93#egg=registration
+-e git+git://github.com/bitmazk/django-registration-email.git@e280c76b01b7d30e5ed46709d437e6615acbe3a3#egg=registration_email
+-e git+git://github.com/jtauber/django-mailer.git@af91e3b3556ea1a0ae9cb2c5b6520bacdab6a9fa#egg=mailer
+
+# ============================
+# django-cms related packages
+# ============================
+-e git+git://github.com/divio/django-cms.git@15bb96d6c5f1d85ea9d441db2a21791d3713c748#egg=cms
+cmsplugin-blog==1.1.2
+cmsplugin-blog-search==0.9
+-e git+git://github.com/bitmazk/cmsplugin_blog_paginated.git@15064fdc30d13375898096e5d2a1838ccbfded8a#egg=cmsplugin_blog_paginated
+-e git+git://github.com/stefanfoulis/django-filer.git@81c7304b8240279a5fe13bf769d7839fed72fba9#egg=filer
+-e git+git://github.com/stefanfoulis/cmsplugin-filer.git@d11a756989d043890472f12ad5fe4479256def70#egg=cmsplugin_filer
+django-cms-facetsearch==0.9.2
+django-reversion==1.6.1
+django-tagging==0.3.1
+simple-translation==0.8.6
+
+
+# =========================
+# Important other packages
+# =========================
+south==0.7.5
+easy_thumbnails==1.0.3
+Markdown==2.2.0
+
+
+# ==========================
+# Security related packages
+# ==========================
+django-simple-captcha==0.3.4
+django-admin-honeypot==0.2.2
+
+
+# =================
+# Bitmazk packages
+# =================
+-e git+git://github.com/bitmazk/bitmazk-contact-form.git@ceb63313336c4dbe034e7805fcf1d746e9a784b4#egg=contact_form
+-e git+git://github.com/bitmazk/django-honeypot-signals@5ca73d5775e4d76665572f1bcbf24b3e1d585b3b#egg=honeypot_signals
+
+
+# =============
+# For debugging
+# =============
+ipython==0.13
+ipdb==0.7
+
+# ===================
+# For task automation
+# ===================
+fabric==1.4.3
+
+# =============================
+# For testing and code checking
+# =============================
+flake8==1.4
+coverage==3.5.2
+django-coverage==1.2.2
+django-nose==1.1
+factory_boy==1.1.5

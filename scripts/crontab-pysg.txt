@@ -1,0 +1,2 @@
+0 2 * * * $HOME/bin/pg-backup-pysg.sh > $HOME/mylogs/cron/pg-backup-pysg.log 2>&1
+0 18 * * * $HOME/bin/django-cleanup-pysg.sh > $HOME/mylogs/cron/django-cleanup-pysg.log 2>&1

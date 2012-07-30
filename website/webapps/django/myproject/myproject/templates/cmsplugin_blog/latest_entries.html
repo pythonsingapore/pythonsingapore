@@ -1,0 +1,9 @@
+{% load i18n placeholder_tags cmsplugin_blog_tags simple_translation_tags %}
+{% if object_list %}
+    <h3>{% trans "Latest articles" %}</h3>
+    {% for entry in object_list|annotate_with_translations %}
+        {% with entry|get_preferred_translation_from_request:request as title %}
+        &raquo; <span class="label label-inverse"><a class="title" href="{{ title.get_absolute_url }}">{{ title }}</a></span><br />
+        {% endwith %}
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,40 @@
+{% extends "cmsplugin_blog/cmsplugin_blog_base.html" %}
+{% load i18n cmsplugin_blog_tags %}
+
+{% block left-col %}
+<img id="logo" src="{{ STATIC_URL }}img/logo.jpg" alt="python.sg logo" />
+{{ block.super }}
+
+{% if object_list %}
+   {% include "cmsplugin_blog/entry_list_include.html" %}
+{% else %}
+	<p>{% trans "No news added, yet." %}</p>
+{% endif %}
+
+{% if page_obj.has_previous or page_obj.has_next %}
+	<div class="pagination">
+		<ul>
+			<li {% if not page_obj.has_previous %}class="disabled"{% endif %}>
+				<a href="{% if page_obj.has_previous %}?q={{ query }}&amp;page={{ page_obj.previous_page_number }}{% else %}#" onclick="return false;{% endif %}">&laquo;</a>
+			</li>
+			{% for page_number in paginator.page_range %}
+			<li class="{% if page_number == page_obj.number %}active{% endif %}"><a href="?q={{ query }}&page={{ page_number }}">{{ page_number }}</a></li>
+			{% endfor %}
+			<li {% if not page_obj.has_next %}class="disabled"{% endif %}>
+				<a href="{% if page_obj.has_next %}?q={{ query }}&amp;page={{ page_obj.next_page_number }}{% else %}#" onclick="return false;{% endif %}">&raquo;</a>
+			</li>
+		</ul>
+	</div>
+{% endif %}
+
+{% endblock %}
+
+{% block right-col %}
+
+{% render_author_links %}
+
+{% render_month_links %}
+
+{% render_tag_links %}
+
+{% endblock %}

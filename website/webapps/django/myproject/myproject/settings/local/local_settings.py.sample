@@ -1,0 +1,106 @@
+# flake8: noqa
+"""
+Local settings that override standard settings.
+
+You need to make a copy of this file and name it local_settings.py.
+This file will not be under version control and you can adjust the settings
+as you like.
+"""
+import os
+
+from myproject.settings.base_settings import PROJECT_ROOT
+from myproject.settings.installed_apps import INSTALLED_APPS as DEFAULT_INSTALLED_APPS  # NOQA
+
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+SANDBOX = True
+
+
+# Set this to True on production
+PREPEND_WWW = False
+
+
+# To initialize your database:
+# =============================
+# > mysql -uroot -p
+# > create user projectname identified by 'projectname';
+# > create database labels character set utf8 collate utf8_general_ci;
+# > grant all on projectname.* to projectname;
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        "NAME": "db.sqlite",                     # Or path to database file if using sqlite3.
+        "USER": "",                              # Not used with sqlite3.
+        "PASSWORD": "",                          # Not used with sqlite3.
+        'HOST': '',                              # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                              # Set to empty string for default. Not used with sqlite3.
+    }
+}
+
+
+# ======================
+# General Email Settings
+# ======================
+ADMINS = (
+    ('Yourname', 'yourname@gmail.com'),
+)
+MANAGERS = ADMINS
+EMAIL_BACKEND = 'mailer.backend.DbBackend'
+
+
+# ================================
+# Local Development Email Settings
+# ================================
+MAILER_EMAIL_BACKEND = 'myproject.test_email_backend.EmailBackend'
+TEST_EMAIL_BACKEND_RECEPIENTS = ADMINS
+
+FROM_EMAIL = ADMINS[0][1]
+EMAIL_SUBJECT_PREFIX = '[dev yourproject] '
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = FROM_EMAIL
+EMAIL_HOST_PASSWORD = "yourgmailpw"
+EMAIL_PORT = 587
+
+
+# ==========================
+# Webfaction Server Settings
+# ==========================
+#FROM_EMAIL = "info@example.com"
+#EMAIL_SUBJECT_PREFIX = '[yourproject] '
+
+#EMAIL_HOST = 'smtp.webfaction.com'
+#EMAIL_HOST_USER = ""
+#EMAIL_HOST_PASSWORD = ""
+#EMAIL_PORT = 25
+
+
+# ===========================
+# More general email settings
+# ===========================
+DEFAULT_FROM_EMAIL = FROM_EMAIL
+SERVER_EMAIL = FROM_EMAIL
+EMAIL_USE_TLS = True
+
+# ==========================
+# Additional installed apps
+# ==========================
+INSTALLED_APPS = DEFAULT_INSTALLED_APPS + [
+    'django_extensions',
+]
+
+
+# ======================
+# Static files settings
+# ======================
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../..',  'media')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, '../..', 'static')
+
+
+# ===========
+# Secret key
+# ===========
+SECRET_KEY = 'generate your secret key here: http://www.miniwebtool.com/django-secret-key-generator/'

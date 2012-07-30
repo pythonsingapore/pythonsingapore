@@ -1,0 +1,158 @@
+[
+    {
+        "pk": 3, 
+        "model": "cmsplugin_blog.entry", 
+        "fields": {
+            "placeholders": [
+                23, 
+                24
+            ], 
+            "tags": "learning, tutorial", 
+            "pub_date": "2012-07-20T10:13:17Z", 
+            "is_published": true
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "cmsplugin_blog.entry", 
+        "fields": {
+            "placeholders": [
+                25, 
+                26
+            ], 
+            "tags": "people", 
+            "pub_date": "2012-07-20T10:12:48Z", 
+            "is_published": true
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "cmsplugin_blog.entry", 
+        "fields": {
+            "placeholders": [
+                19, 
+                20
+            ], 
+            "tags": "offspring, learning", 
+            "pub_date": "2012-07-19T10:14:22Z", 
+            "is_published": true
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "cmsplugin_blog.entry", 
+        "fields": {
+            "placeholders": [
+                21, 
+                22
+            ], 
+            "tags": "tutorial", 
+            "pub_date": "2012-07-17T10:13:45Z", 
+            "is_published": true
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "cmsplugin_blog.entry", 
+        "fields": {
+            "placeholders": [
+                17, 
+                18
+            ], 
+            "tags": "learning, people", 
+            "pub_date": "2012-07-11T10:15:10Z", 
+            "is_published": true
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "cmsplugin_blog.entry", 
+        "fields": {
+            "placeholders": [
+                11, 
+                12
+            ], 
+            "tags": "", 
+            "pub_date": "2012-06-16T10:45:31Z", 
+            "is_published": true
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "cmsplugin_blog.entrytitle", 
+        "fields": {
+            "entry": 1, 
+            "author": [
+                "admin"
+            ], 
+            "slug": "python-sg-on-its-run", 
+            "language": "en", 
+            "title": "Python.sg on its run"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "cmsplugin_blog.entrytitle", 
+        "fields": {
+            "entry": 2, 
+            "author": [
+                "admin"
+            ], 
+            "slug": "what-happened-to-chris-morgan", 
+            "language": "en", 
+            "title": "What happened to Chris Morgan?"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "cmsplugin_blog.entrytitle", 
+        "fields": {
+            "entry": 3, 
+            "author": [
+                "admin"
+            ], 
+            "slug": "help-yourself-learn-python", 
+            "language": "en", 
+            "title": "Help yourself, learn Python!"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "cmsplugin_blog.entrytitle", 
+        "fields": {
+            "entry": 4, 
+            "author": [
+                "admin"
+            ], 
+            "slug": "why-you-shouldnt-repeat-yourself", 
+            "language": "en", 
+            "title": "Why you shouldn't repeat yourself"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "cmsplugin_blog.entrytitle", 
+        "fields": {
+            "entry": 5, 
+            "author": [
+                "admin"
+            ], 
+            "slug": "youngsters-present", 
+            "language": "en", 
+            "title": "Youngsters present?"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "cmsplugin_blog.entrytitle", 
+        "fields": {
+            "entry": 6, 
+            "author": [
+                "admin"
+            ], 
+            "slug": "a-long-way-to-perfection", 
+            "language": "en", 
+            "title": "A long way to perfection"
+        }
+    }
+]
