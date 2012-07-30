@@ -19,6 +19,7 @@ cmsplugin-blog-search==0.9
 -e git+git://github.com/bitmazk/cmsplugin_blog_paginated.git@15064fdc30d13375898096e5d2a1838ccbfded8a#egg=cmsplugin_blog_paginated
 -e git+git://github.com/stefanfoulis/django-filer.git@81c7304b8240279a5fe13bf769d7839fed72fba9#egg=filer
 -e git+git://github.com/stefanfoulis/cmsplugin-filer.git@d11a756989d043890472f12ad5fe4479256def70#egg=cmsplugin_filer
+cmsplugin-markdown==0.1
 django-cms-facetsearch==0.9.2
 django-reversion==1.6.1
 django-tagging==0.3.1
