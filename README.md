@@ -1,6 +1,6 @@
 # pythonsingapore.com
 
-This repository holds the source code of the website [pythonsingapore.com](https://pythonsingapore.com).
+This repository holds the source code of the website [www.pythonsingapore.com](https://www.pythonsingapore.com).
 
 # How to setup this project locally
 
