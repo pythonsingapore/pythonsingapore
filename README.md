@@ -4,8 +4,13 @@ This repository holds the source code of the website [pythonsingapore.com](https
 
 # How to setup this project locally
 
-Fork this repository, then clone your fork. Next you should create a virtual
-environment for your local development:
+Fork this repository, then clone your fork. Don't forget to initialize the
+submodules in your local clone:
+
+    git submodule init
+    git submodule update
+
+Next you should create a virtual environment for your local development:
 
     mkvirtualenv -p python2.7 pysg
 
