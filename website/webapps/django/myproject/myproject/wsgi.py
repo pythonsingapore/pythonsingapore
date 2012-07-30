@@ -4,10 +4,10 @@ import site
 import sys
 
 
-site.addsitedir('/home/pythonsg/Envs/pythonsg/lib/python2.7/site-packages')
-activate_this = os.path.expanduser("~/Envs/pythonsg/bin/activate_this.py")
+site.addsitedir('/home/pysg/Envs/pysg/lib/python2.7/site-packages')
+activate_this = os.path.expanduser("~/Envs/pysg/bin/activate_this.py")
 execfile(activate_this, dict(__file__=activate_this))
-project = '/home/pythonsg/webapps/pythonsg_django/myproject/'
+project = '/home/pysg/webapps/pysg_django/myproject/'
 workspace = os.path.dirname(project)
 sys.path.append(workspace)
 
