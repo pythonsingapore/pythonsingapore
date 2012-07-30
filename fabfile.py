@@ -231,8 +231,10 @@ def run_prepare_local_settings():
         sed('local_settings.py', 'yourproject', '{0}'.format(
             PROJECT_NAME))
 
-        sed('local_settings.py', "'media')", fab_settings.MEDIA_APP_NAME)
-        sed('local_settings.py', "'static')", fab_settings.STATIC_APP_NAME)
+        sed('local_settings.py', '"media"', '"{0}"'.format(
+            fab_settings.MEDIA_APP_NAME))
+        sed('local_settings.py', '"static"', '"{0}"'.format(
+            fab_settings.STATIC_APP_NAME))
         sed('local_settings.py', 'yourname', fab_settings.ADMIN_NAME)
         sed('local_settings.py', 'info@example.com', fab_settings.ADMIN_EMAIL)
         run('rm -f *.bak')
