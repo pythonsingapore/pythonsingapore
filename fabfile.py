@@ -34,7 +34,7 @@ FILE_RESTART_APACHE = 'restart-apache-{0}.sh'.format(PROJECT_NAME)
 FILE_DJANGO_CLEANUP = 'django-cleanup-{0}.sh'.format(PROJECT_NAME)
 FILE_CRONTAB = 'crontab-{0}.txt'.format(PROJECT_NAME)
 FILE_SHOW_MEMORY = 'show-memory.sh'
-FILE_PGPASS = '.pgpass'
+FILE_PGPASS = '.pgpass-{0}'.format(PROJECT_NAME)
 
 
 # ****************************************************************************
@@ -231,37 +231,8 @@ def run_prepare_local_settings():
         sed('local_settings.py', 'yourproject', '{0}'.format(
             PROJECT_NAME))
 
-        sed('local_settings.py', '##EMAIL_BACKEND', 'EMAIL_BACKEND')
-
-        sed('local_settings.py', 'FROM_EMAIL = "info@example.com"',
-            'FROM_EMAIL = "{0}"'.format(fab_settings.EMAIL_DEFAULT_FROM_EMAIL))
-        sed('local_settings.py', 'MAILER_EMAIL_BACKEND', '#MAILER_EMAIL_BACKEND')  # NOQA
-        sed('local_settings.py', 'TEST_EMAIL_BACKEND_RECEPIENTS', '#TEST_EMAIL_BACKEND_RECEPIENTS')  # NOQA
-
-        sed('local_settings.py', 'FROM_EMAIL =', '#FROM_EMAIL =')
-        sed('local_settings.py', '##FROM_EMAIL', 'FROM_EMAIL')
-        sed('local_settings.py', 'DEFAULT_#FROM_EMAIL', 'DEFAULT_FROM_EMAIL')
-
-        sed('local_settings.py', 'EMAIL_SUBJECT_PREFIX', '#EMAIL_SUBJECT_PREFIX')  # NOQA
-        sed('local_settings.py', '##EMAIL_SUBJECT_PREFIX', 'EMAIL_SUBJECT_PREFIX')  # NOQA
-
-        sed('local_settings.py', 'EMAIL_HOST =', '#EMAIL_HOST =')
-        sed('local_settings.py', '##EMAIL_HOST', 'EMAIL_HOST')
-
-        sed('local_settings.py', 'EMAIL_HOST_USER = FROM_EMAIL', '#EMAIL_HOST_USER = FROM_EMAIL')  # NOQA
-        sed('local_settings.py', '#EMAIL_HOST_USER = ""',
-            'EMAIL_HOST_USER = "{0}"'.format(fab_settings.EMAIL_INBOX))
-
-        sed('local_settings.py', 'EMAIL_HOST_PASSWORD', '#EMAIL_HOST_PASSWORD')
-        sed('local_settings.py', '##EMAIL_HOST_PASSWORD = ""',
-            'EMAIL_HOST_PASSWORD = "{0}"'.format(fab_settings.EMAIL_PASSWORD))
-
-        sed('local_settings.py', 'EMAIL_PORT', '#EMAIL_PORT')
-        sed('local_settings.py', '##EMAIL_PORT', 'EMAIL_PORT')
-
-        sed('local_settings.py', 'MEDIA_APP_NAME', fab_settings.MEDIA_APP_NAME)
-        sed('local_settings.py', 'STATIC_APP_NAME',
-            fab_settings.STATIC_APP_NAME)
+        sed('local_settings.py', "'media')", fab_settings.MEDIA_APP_NAME)
+        sed('local_settings.py', "'static')", fab_settings.STATIC_APP_NAME)
         sed('local_settings.py', 'yourname', fab_settings.ADMIN_NAME)
         sed('local_settings.py', 'info@example.com', fab_settings.ADMIN_EMAIL)
         run('rm -f *.bak')
