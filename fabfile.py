@@ -43,6 +43,9 @@ FILE_PGPASS = '.pgpass-{0}'.format(PROJECT_NAME)
 def install_everything():
     install_server()
     first_deployment()
+    print('Installation successful. Please check the crontabs and the local'
+          ' settings on the server. Especially generate a secret token and'
+          ' Set your ADMIN_URL setting.')
 
 
 def first_deployment():

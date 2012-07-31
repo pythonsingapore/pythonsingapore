@@ -16,6 +16,9 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SANDBOX = True
 
+# Enter your desired admin URL here. Replace XXXX with a number
+ADMIN_URL = r'admin-XXXX/'
+
 
 # Set this to True on production
 PREPEND_WWW = False
