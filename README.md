@@ -19,6 +19,8 @@ locally:
     sudo apt-get install pgdmin3
     sudo apt-get install python-psycopg2
 
+## Install the project locally
+
 Fork this repository, then clone your fork. Don't forget to initialize the
 submodules in your local clone:
 
