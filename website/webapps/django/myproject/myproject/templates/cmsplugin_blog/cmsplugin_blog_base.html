@@ -11,7 +11,7 @@
             {% block left-col %}{{ block.super }}{% endblock %}
         </div>
         <div class="span4">
-            {% block right-col %}{{ block.super }}{% endblock %}
+            {% include "cmsplugin_blog/partials/sidebar.html" %}
         </div>
     </div>
 {% endblock %}
