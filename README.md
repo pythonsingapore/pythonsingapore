@@ -66,7 +66,7 @@ called `admin` and the password is `test123`.
 
 # How to contribute
 
-If you found a bug or event want to implement a whole new feature, please do
+If you found a bug or even want to implement a whole new feature, please do
 the following:
 
 1. Fork this repository on GitHub
