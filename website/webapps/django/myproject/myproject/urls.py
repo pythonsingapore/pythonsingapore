@@ -5,13 +5,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from myproject.sitemaps import BlogSitemap, PagesSitemap
+from cms.sitemaps import CMSSitemap
+
+from myproject.sitemaps import BlogSitemap
 
 
 admin.autodiscover()
 
 sitemaps = {}
-sitemaps['cmspages'] = PagesSitemap()
+sitemaps['cmspages'] = CMSSitemap()
 sitemaps['news'] = BlogSitemap()
 
 urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
