@@ -20,6 +20,7 @@ django-extensions==1.0.1
 django-filer==0.9.2
 django-haystack==1.2.7
 -e git+https://github.com/bitmazk/django-honeypot-signals@5ca73d5775e4d76665572f1bcbf24b3e1d585b3b#egg=django-honeypot-signals
+django-libs==0.8
 django-mailer==0.1.0
 django-missing==0.1.11
 django-mptt==0.5.4
@@ -33,7 +34,6 @@ django-sekizai==0.6.1
 django-simple-captcha==0.3.4
 django-staticfiles==1.2.1
 django-tagging==0.3.1
-docutils==0.9.1
 easy-thumbnails==1.1
 Fabric==1.5.1
 factory-boy==1.2.0
@@ -42,14 +42,7 @@ html5lib==0.95
 ipdb==0.7
 ipython==0.13.1
 Markdown==2.2.1
-mercurial==2.4
 nose==1.2.1
-numpy==1.6.2
 PIL==1.1.7
-pycrypto==2.6
-reportlab==2.6
 simple-translation==0.8.6
 South==0.7.6
-ssh==1.8.0
-virtualenv-clone==0.2.4
-wsgiref==0.1.2
