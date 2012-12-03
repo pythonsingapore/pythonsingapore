@@ -6,7 +6,6 @@ from django.contrib import messages
 from myproject.settings.base_settings import PROJECT_ROOT
 
 
-
 # =================
 # General settings
 # =================

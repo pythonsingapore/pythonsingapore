@@ -6,9 +6,10 @@ from user_data.views import (
 )
 
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
+
     url(r'^$',
         UserDataDetailView.as_view(),
-        name='user_data_detail',
-    ),
+        name='user_data_detail', ),
 )

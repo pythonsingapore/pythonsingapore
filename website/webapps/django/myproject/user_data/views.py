@@ -1,10 +1,8 @@
 """Views for the ``user_data`` app."""
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
-from django.core.urlresolvers import Http404, reverse
+from django.core.urlresolvers import reverse
 from django.utils.decorators import method_decorator
-from django.utils.translation import ugettext_lazy as _
 from django.views.generic import (
     DetailView,
 )
@@ -30,8 +28,8 @@ class UserDataDetailView(DetailView):
             except Group.DoesNotExist:
                 pass
             self.profile = UserProfile.objects.create(user=self.user)
-        return super(UserDataDetailView, self).dispatch(request, *args,
-            **kwargs)
+        return super(
+            UserDataDetailView, self).dispatch(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         return self.profile

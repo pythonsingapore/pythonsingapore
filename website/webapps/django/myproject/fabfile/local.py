@@ -34,14 +34,31 @@ def dumpdata():
     get a full initial dump when running this task.
 
     """
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural auth --exclude auth.permission > myproject/fixtures/bootstrap_auth.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural registration > myproject/fixtures/bootstrap_registration.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural sites > myproject/fixtures/bootstrap_sites.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural cms.placeholder > myproject/fixtures/bootstrap_cms.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural cms --exclude cms.placeholder > myproject/fixtures/bootstrap_cms2.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural text > myproject/fixtures/bootstrap_cms_plugins_text.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural cmsplugin_blog > myproject/fixtures/bootstrap_cmsplugin_blog.json')  # NOQA
-    local('python2.7 ./manage.py dumpdata --indent 4 --natural tagging > myproject/fixtures/bootstrap_tagging.json')  # NOQA
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural auth'
+          ' --exclude auth.permission > myproject/'
+          'fixtures/bootstrap_auth.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural registration >'
+          ' myproject/fixtures/bootstrap_registration.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural sites >'
+          'myproject/fixtures/bootstrap_sites.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural cms.placeholder'
+          ' > myproject/fixtures/bootstrap_cms.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural cms'
+          ' --exclude cms.placeholder > myproject/fixtures/'
+          'bootstrap_cms2.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural text >'
+          ' myproject/fixtures/bootstrap_cms_plugins_text.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural cmsplugin_blog'
+          ' > myproject/fixtures/bootstrap_cmsplugin_blog.json')
+
+    local('python2.7 ./manage.py dumpdata --indent 4 --natural tagging >'
+          ' myproject/fixtures/bootstrap_tagging.json')
 
 
 def export_db():
@@ -55,8 +72,8 @@ def export_db():
     if 'postgre' in db_engine:
         local('pg_dump -c -U {0} > {1}_psql.sql'.format(db_user, db_name))
     if 'mysql' in db_engine:
-        local('mysqldump -u{0} -p {1} {2} > {2}_mysql.sql'.format(db_user,
-            db_password, db_name))
+        local('mysqldump -u{0} -p {1} {2} > {2}_mysql.sql'.format(
+            db_user, db_password, db_name))
 
 
 def flake8():
@@ -75,14 +92,17 @@ def import_db():
     if 'postgre' in db_engine:
         local('psql -U {0} < {1}_psql.sql'.format(db_user, db_name))
     if 'mysql' in db_engine:
-        local('mysql -u{0} -p{1} {2} < {2}_mysql.sql'.format(db_user,
-            db_password, db_name))
+        local('mysql -u{0} -p{1} {2} < {2}_mysql.sql'.format(
+            db_user, db_password, db_name))
 
 
 def lessc():
     """Compiles all less files."""
-    local('lessc myproject/static/css/bootstrap.less myproject/static/css/bootstrap.css')  # NOQA
-    local('lessc myproject/static/css/responsive.less myproject/static/css/bootstrap-responsive.css')  # NOQA
+    local('lessc myproject/static/css/bootstrap.less myproject/static/css/'
+          'bootstrap.css')
+
+    local('lessc myproject/static/css/responsive.less myproject/static/css/'
+          'bootstrap-responsive.css')
 
 
 def push():
@@ -121,8 +141,8 @@ def rebuild_db():
 def rebuild_media():
     """Copies media fixtures into your media_root."""
     local('rm -rf %s' % MEDIA_ROOT)
-    media_fixtures_path = os.path.join(PROJECT_ROOT,
-            'test_media/fixtures/media/')
+    media_fixtures_path = os.path.join(
+        PROJECT_ROOT, 'test_media/fixtures/media/')
     local('mkdir -p %s' % media_fixtures_path)
     local('cp -rf %s %s' % (media_fixtures_path, MEDIA_ROOT))
 
@@ -148,7 +168,8 @@ def test(options=None, integration=1):
         $ fab test:integration=0            # will exclude integration tests
 
     """
-    command = "./manage.py test -v 2 --traceback --failfast --settings=myproject.settings.test_settings"  # NOQA
+    command = ('./manage.py test -v 2 --traceback --failfast'
+               ' --settings=myproject.settings.test_settings')
     if int(integration) == 0:
         command += " --exclude='integration_tests'"
     if options:

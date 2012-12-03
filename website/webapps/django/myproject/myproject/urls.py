@@ -20,7 +20,8 @@ urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG is False and settings.SANDBOX is True:
-    urlpatterns += patterns('',
+    urlpatterns += patterns(
+        '',
         (r'^404/$', 'django.views.defaults.page_not_found'),
         (r'^500/$', 'django.views.defaults.server_error'),
         url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
@@ -29,7 +30,8 @@ if settings.DEBUG is False and settings.SANDBOX is True:
             {'document_root': settings.MEDIA_ROOT}),
     )
 
-urlpatterns += patterns('',
+urlpatterns += patterns(
+    '',
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': sitemaps, }),
     url(r'^captcha/', include('captcha.urls')),

@@ -20,7 +20,8 @@ def run_deploy_website():
 
 
 def run_download_db():
-    local('scp {0}@{0}.webfactional.com:/home/{0}/pg_dump.gz .'.format(env.user))  # NOQA
+    local('scp {0}@{0}.webfactional.com:/home/{0}/pg_dump.gz .'.format(
+        env.user))
 
 
 def run_download_media():
@@ -35,7 +36,7 @@ def run_download_media():
 def run_dump_db():
     """Dumps the latest database."""
     run(('pg_dump -c -U {0}_{1} {0}_{1} | gzip -c -9 >'
-         ' $HOME/pg_dump.gz').format(
+        ' $HOME/pg_dump.gz').format(
             fab_settings.ENV_USER, fab_settings.PROJECT_NAME))
 
 

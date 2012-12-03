@@ -73,8 +73,8 @@ class ViewTestsMixin(object):
         """Tests if the view redirects to login when the user is anonymous."""
         url = self.get_url(view_name, view_args, view_kwargs)
         resp = self.client.get(url)
-        self.assertRedirects(resp,
-            '{0}?next={1}'.format(reverse('auth_login'), url))
+        self.assertRedirects(
+            resp, '{0}?next={1}'.format(reverse('auth_login'), url))
         return resp
 
     def should_be_callable_when_anonymous(
@@ -101,8 +101,8 @@ class ViewTestsMixin(object):
         user_no_permissions = UserFactory()
         self.login(user_no_permissions)
         resp = self.client.get(url)
-        self.assertRedirects(resp,
-            '{0}?next={1}'.format(reverse('auth_login'), url))
+        self.assertRedirects(
+            resp, '{0}?next={1}'.format(reverse('auth_login'), url))
 
         self.login(user)
         resp = self.client.get(url)
